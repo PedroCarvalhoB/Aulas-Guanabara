@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisores</title>
+</head>
+<body>
+    <main>
+        <h1>Mostrar divisores</h1>
+        <form action="lol.php" method="get" onsubmit="return calc()">
+            <p>
+                <label for="num">Marcar divisores de: </label>
+                <input type="number" name="num" id="num">
+                <input type="submit" value="Mostrar">
+            </p>
+        </form>
+        <p id="resp">...</p>
+    </main>
+
+    <script>
+        function calc() {
+            let c = 1
+            let n = Number(num.value)
+            resp.innerHTML = null
+            while (c <= 100) {
+                if (c % n == 0) {
+                    resp.innerHTML += `&nbsp;&nbsp;<strong> ${c} </strong>&nbsp;&nbsp;`
+                } else {
+                    resp.innerHTML += `&nbsp;&nbsp;<del> ${c} </del>&nbsp;&nbsp;`
+                }
+
+                c ++
+            }
+            return false
+        }
+    </script>
+</body>
+</html>
